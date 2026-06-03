@@ -312,7 +312,8 @@ pub fn is_supported_mint(
             && e != ExtensionType::MetadataPointer
             && e != ExtensionType::TokenMetadata
             && e != ExtensionType::InterestBearingConfig
-            && e != ExtensionType::ScaledUiAmount
+            // ScaledUiAmount is only available in spl-token-2022 >= 7.0
+            // && e != ExtensionType::ScaledUiAmount
         {
             return Ok(false);
         }
